@@ -26,7 +26,7 @@ impl Adoption {
         }
     }
 
-    // Adopting a pet
+    // Adopting a pet - call {smart_contract_id} 0 999999 adopt 11
     pub fn adopt(&mut self, params: &mut Parameters) -> Result<(), String> {
         let petId : u8 = params.read();
 
@@ -39,7 +39,7 @@ impl Adoption {
         Ok(())
     }
 
-    // Retrieving the adopters
+    // Retrieving the adopters - call {smart_contract_id} 0 99999 getAdopters
     pub fn getAdopters(&mut self, params: &mut Parameters) -> Result<(), String> {
         log(&serde_json::to_string(&self.adopters).unwrap());
         Ok(())
